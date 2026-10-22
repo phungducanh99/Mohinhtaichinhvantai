@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Bản đồ học tương tác mô hình kinh doanh HVXT theo 7P+F Hải Vân." />
+  <title>HVXT 7P+F — Bản đồ mô hình kinh doanh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Về đầu trang">
+      <span class="brand-mark">HV</span>
+      <span><strong>HVXT 7P+F</strong><small>Business learning map</small></span>
+    </a>
+    <nav aria-label="Điều hướng chính">
+      <a href="#map">Mô hình</a><a href="#numbers">Số liệu</a><a href="#learn">Học</a><a href="#sources">Nguồn</a>
+    </nav>
+    <button class="mode-toggle" id="modeToggle" type="button" aria-label="Đổi giao diện sáng tối">◐</button>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">BẢN ĐỒ ĐIỀU HÀNH · KHKD 2026</p>
+        <h1>7P tạo giá trị.<br><span>Finance kiểm chứng.</span></h1>
+        <p class="lede">Một cách học mô hình kinh doanh vận tải từ thị trường đến lợi nhuận trên từng chiếc xe — và biết phải can thiệp ở đâu khi chỉ số xấu.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#map">Khám phá mô hình</a>
+          <a class="button secondary" href="#scenario">Thử kịch bản</a>
+        </div>
+        <p class="source-note"><span class="dot verified"></span>7P+F được đối chiếu từ sheet nội bộ “Chiến thuật 7P+F”, cập nhật 04/09/2026. Trạng thái phê duyệt chính thức chưa được thể hiện trong metadata nguồn.</p>
+      </div>
+      <div class="hero-model" aria-label="Chuỗi tạo giá trị của mô hình">
+        <div class="model-label">Đơn vị kinh tế</div>
+        <div class="equation">
+          <span>Route</span><b>×</b><span>Product</span><b>×</b><span>Departure</span><b>×</b><span>Vehicle</span>
+        </div>
+        <div class="flowline" aria-hidden="true"><i></i></div>
+        <div class="north-star">
+          <small>NORTH STAR ECONOMICS</small>
+          <strong>LNST / xe / tháng</strong>
+          <span>+ ROIC / sản phẩm</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="map">
+      <div class="section-heading">
+        <div><p class="eyebrow">01 · MÔ HÌNH TỔNG QUAN</p><h2>Chọn một khối để học</h2></div>
+        <div class="legend"><span><i class="dot verified"></i>Dữ liệu nguồn</span><span><i class="dot insight"></i>Diễn giải quản trị</span></div>
+      </div>
+      <div class="value-chain">
+        <div class="chain-caption">THỊ TRƯỜNG & KHÁCH HÀNG</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-caption">CÔNG SUẤT & VẬN HÀNH</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-caption">LỢI NHUẬN & VỐN</div>
+      </div>
+      <div class="pillar-grid" id="pillarGrid"></div>
+      <article class="pillar-detail" id="pillarDetail" aria-live="polite"></article>
+    </section>
+
+    <section class="section numbers" id="numbers">
+      <div class="section-heading">
+        <div><p class="eyebrow">02 · DỮ LIỆU WORKBOOK</p><h2>Economics đang nói gì?</h2></div>
+        <div class="segmented" role="group" aria-label="Chọn lớp thông tin">
+          <button class="active" data-layer="all">Tất cả</button><button data-layer="source">Dữ liệu</button><button data-layer="interpretation">Diễn giải</button>
+        </div>
+      </div>
+      <div class="metric-strip source-layer">
+        <div><strong>69,54</strong><span>tỷ DT thuần</span></div><div><strong>30,6%</strong><span>Gross margin</span></div><div><strong>5,98</strong><span>tỷ LNST</span></div><div><strong>8,6%</strong><span>Net margin</span></div>
+      </div>
+      <p class="data-caption source-layer"><b>Nguồn:</b> KHKD 2026 trong workbook HVXT, số làm tròn từ phân tích trước. Workbook có lỗi công thức và chênh lệch reconcile; không coi là số liệu đã kiểm toán.</p>
+
+      <div class="product-layout">
+        <div class="product-table-wrap source-layer">
+          <table>
+            <caption>Ví dụ P&amp;L sản phẩm — tháng 10</caption>
+            <thead><tr><th>Sản phẩm</th><th>Load factor</th><th>Lượt/xe/ngày</th><th>LNST</th><th>LNST/xe</th></tr></thead>
+            <tbody>
+              <tr><td><b>R24</b></td><td>88,9%</td><td>≈1,80*</td><td>378 tr</td><td>≈63 tr</td></tr>
+              <tr><td><b>R34C</b></td><td>62,7%</td><td>≈1,80*</td><td>176 tr</td><td>≈35,2 tr</td></tr>
+              <tr><td><b>MOCHA 10</b></td><td>78,8%</td><td>1,40</td><td>35 tr</td><td>≈3,5 tr</td></tr>
+              <tr><td><b>MOCHA 12</b></td><td>69,9%</td><td>2,25</td><td>≈71,5 tr</td><td>≈17,9 tr</td></tr>
+            </tbody>
+          </table>
+          <p class="table-note">*Suy ra từ lượt xe / số xe / 31 ngày; dùng để học, không thay số khóa sổ.</p>
+        </div>
+        <div class="insight-stack interpretation-layer">
+          <div class="insight-card"><span>01</span><div><b>Doanh thu không đủ để xếp hạng sản phẩm</b><p>Phải nhìn contribution, LNST/xe và vốn sử dụng.</p></div></div>
+          <div class="insight-card warning"><span>02</span><div><b>MOCHA 10 là điểm cần chẩn đoán trước</b><p>Nhiều xe nhất nhưng lợi nhuận/xe thấp nhất; dấu hiệu asset productivity yếu.</p></div></div>
+          <div class="insight-card"><span>03</span><div><b>MOCHA 12 là mẫu để học, chưa phải lệnh scale</b><p>Cần tách tác động tuyến, giờ chạy, khách và cấu hình xe trước khi nhân rộng.</p></div></div>
+        </div>
+      </div>
+
+      <div class="driver-tree interpretation-layer">
+        <div class="tree-head"><small>CÂY DRIVER</small><strong>LNST / XE</strong></div>
+        <div class="tree-branches">
+          <div><b>Doanh thu</b><span>Lượt/xe/ngày</span><span>HK/lượt</span><span>Net yield</span><span>Cargo/lượt</span></div>
+          <div><b>Chi phí vận hành</b><span>Fuel/km</span><span>Nhân sự/lượt</span><span>Sửa chữa/km</span><span>Bến bãi</span></div>
+          <div><b>Chi phí tài sản</b><span>Khấu hao</span><span>Lãi vay</span><span>Bảo hiểm</span><span>Downtime</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section lab" id="scenario">
+      <div class="section-heading">
+        <div><p class="eyebrow">03 · PHÒNG THÍ NGHIỆM</p><h2>Nếu thay đổi driver thì sao?</h2></div>
+        <p class="heading-note">Mô phỏng chỉ số hóa (base = 100), không phải dự báo tài chính.</p>
+      </div>
+      <div class="lab-grid">
+        <div class="controls">
+          <label>Load factor <output id="loadOut">70%</output><input id="load" type="range" min="45" max="95" value="70"></label>
+          <label>Net yield <output id="yieldOut">100</output><input id="yield" type="range" min="75" max="125" value="100"></label>
+          <label>Lượt/xe/ngày <output id="tripOut">1,80</output><input id="trip" type="range" min="80" max="280" value="180"></label>
+          <label>Fuel cost index <output id="fuelOut">100</output><input id="fuel" type="range" min="75" max="140" value="100"></label>
+          <button class="button secondary reset" id="resetScenario" type="button">Đặt lại</button>
+        </div>
+        <div class="scenario-output">
+          <div class="scenario-score"><small>ECONOMICS INDEX</small><strong id="econIndex">100</strong><span id="econDelta">Mức cơ sở</span></div>
+          <div class="formula">Doanh thu ∝ <b>Load × Yield × Trips</b><br>Contribution ≈ Doanh thu − <b>Fuel &amp; biến phí</b></div>
+          <div class="recommendation" id="recommendation"></div>
+        </div>
+      </div>
+      <div class="stop-gate"><span>!</span><p><b>Cổng dừng an toàn</b>Không tăng utilization bằng cách vi phạm giờ lái, cắt thời gian nghỉ, trì hoãn bảo dưỡng hoặc che giấu rủi ro.</p></div>
+    </section>
+
+    <section class="section learn" id="learn">
+      <div class="section-heading"><div><p class="eyebrow">04 · HỌC CHỦ ĐỘNG</p><h2>Nhớ bằng quyết định, không bằng định nghĩa</h2></div></div>
+      <div class="learn-tabs" role="tablist">
+        <button class="active" data-tab="flashcards" role="tab">Flashcards</button><button data-tab="quiz" role="tab">Quiz 5 câu</button><button data-tab="case" role="tab">Case quản trị</button>
+      </div>
+      <div class="tab-panel active" id="flashcards" role="tabpanel">
+        <button class="flashcard" id="flashcard" type="button" aria-label="Lật thẻ học"><span class="card-kicker" id="cardKicker"></span><strong id="cardFront"></strong><p id="cardBack"></p><small>Nhấn để lật</small></button>
+        <div class="card-nav"><button id="prevCard" aria-label="Thẻ trước">←</button><span id="cardCount"></span><button id="nextCard" aria-label="Thẻ sau">→</button></div>
+      </div>
+      <div class="tab-panel" id="quiz" role="tabpanel"><div id="quizApp"></div></div>
+      <div class="tab-panel" id="case" role="tabpanel">
+        <div class="case-box">
+          <p class="eyebrow">TÌNH HUỐNG</p><h3>MOCHA 10: load factor 78,8% nhưng LNST/xe chỉ khoảng 3,5 triệu/tháng.</h3>
+          <p>Bước đầu tiên hợp lý nhất là gì?</p>
+          <div class="case-options">
+            <button data-case="wrong">Tăng ngay ngân sách quảng cáo</button>
+            <button data-case="right">Tách Route × Time × Vehicle, kiểm tra lượt/xe và contribution/km</button>
+            <button data-case="wrong">Mua thêm xe để tăng doanh thu</button>
+          </div>
+          <div class="case-feedback" id="caseFeedback" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section playbook">
+      <div class="section-heading"><div><p class="eyebrow">05 · PLAYBOOK</p><h2>Từ tín hiệu đến hành động</h2></div></div>
+      <div class="loop" aria-label="Chu trình điều chỉnh"><span>Signal</span><i>→</i><span>Diagnose</span><i>→</i><span>Hypothesis</span><i>→</i><span>Test</span><i>→</i><span>Measure</span><i>→</i><span>Scale / Stop</span></div>
+      <div class="playbook-grid">
+        <article><b>Load factor thấp</b><p>Tách theo chuyến/khung giờ → gom lịch → test dịch chuyển nhu cầu → đo contribution/trip.</p></article>
+        <article><b>Yield thấp</b><p>Kiểm tra discount leakage → phân khúc → test price fence → đo net yield và volume.</p></article>
+        <article><b>Lượt/xe thấp</b><p>Vẽ vehicle-day → bóc waiting/deadhead → ghép lịch hai chiều → theo dõi downtime.</p></article>
+        <article><b>Fuel/km cao</b><p>Chuẩn hóa theo route/xe/lái xe → kiểm tra idle, lốp, bảo dưỡng → đo L/100km và TCO/km.</p></article>
+        <article><b>Kênh bán đắt</b><p>Tính contribution/customer/channel → tách khách mới &amp; dịch chuyển kênh → thử cơ chế loyalty.</p></article>
+        <article><b>Muốn thêm xe</b><p>Chứng minh fleet hiện hữu đã đủ tải → thử điều lịch/thuê/partner → duyệt incremental ROIC.</p></article>
+      </div>
+    </section>
+
+    <section class="section sources" id="sources">
+      <div class="section-heading"><div><p class="eyebrow">06 · BẰNG CHỨNG</p><h2>Nguồn nào nói điều gì?</h2></div></div>
+      <div class="source-grid">
+        <article class="source-primary"><span>NỘI BỘ · ĐỊNH NGHĨA</span><h3>Chiến thuật 7P+F</h3><p>Xác nhận cấu trúc 7P và cột Finance xuyên suốt. Cập nhật 04/09/2026. Chưa thấy metadata về quyết định phê duyệt hoặc phiên bản ban hành.</p><a href="https://docs.google.com/spreadsheets/d/1Ca9oT0dYKkh90S0l7ppms37PF_onxF_Ss2A8dMw7Ihw/edit" target="_blank" rel="noreferrer">Mở nguồn ↗</a></article>
+        <article><span>NỘI BỘ · DỮ LIỆU</span><h3>Workbook KHKD 2026 HVXT</h3><p>Nguồn các số liệu P&amp;L và sản phẩm trong bài học trước. Có lỗi #REF!, demand model chưa nối kín và chênh lệch reconcile; cần kiểm soát trước khi ra quyết định đầu tư.</p><a href="chatgpt-conversation://6ad9e3fe-e3e0-83ec-9c05-1993c62efdf0">Mở hội thoại phân tích ↗</a></article>
+        <article><span>BÊN NGOÀI · PHƯƠNG PHÁP</span><h3>Load factor &amp; capacity</h3><p>IATA định nghĩa load factor là phần trăm công suất ghế được sử dụng; dùng RPK/ASK trong hàng không. Áp dụng ở đây như nguyên lý tham khảo, không phải chuẩn bắt buộc cho xe khách.</p><a href="https://www.iata.org/en/publications/newsletters/iata-knowledge-hub/understanding-air-traffic-metrics/" target="_blank" rel="noreferrer">IATA Knowledge Hub ↗</a></article>
+        <article><span>BÊN NGOÀI · PHƯƠNG PHÁP</span><h3>Contribution margin</h3><p>Contribution = doanh thu trừ biến phí; dùng để hiểu phần còn lại trang trải định phí và lợi nhuận.</p><a href="https://openstax.org/books/principles-managerial-accounting/pages/3-1-explain-contribution-margin-and-calculate-contribution-margin-per-unit-contribution-margin-ratio-and-total-contribution-margin" target="_blank" rel="noreferrer">OpenStax ↗</a></article>
+        <article><span>BÊN NGOÀI · PHƯƠNG PHÁP</span><h3>Total cost of ownership</h3><p>Công cụ của US DOE so sánh chi phí sở hữu và sử dụng theo loại xe; củng cố việc đánh giá ICE/HEV/EV bằng TCO thay vì chỉ nhiên liệu.</p><a href="https://afdc.energy.gov/calc/" target="_blank" rel="noreferrer">US DOE AFDC ↗</a></article>
+      </div>
+      <div class="evidence-rule"><b>Quy tắc sử dụng:</b> dữ liệu workbook là bằng chứng thực tế, không tự tạo thẩm quyền. Các kết luận “scale / fix / exit” trên trang là diễn giải quản trị cần kiểm chứng bằng dữ liệu route × time × vehicle và đúng cấp phê duyệt.</div>
+    </section>
+  </main>
+
+  <footer><span>HVXT 7P+F Learning Map</span><span>Phiên bản 22/10/2026 · Trang học nội bộ</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
