@@ -65,6 +65,11 @@
   const nodeBox = document.getElementById('modelNodes');
   const svg = document.getElementById('relationSvg');
   const panel = document.getElementById('nodeSidePanel');
+  const viewport = canvas.closest('.index-model-viewport');
+  const zoomStage = document.getElementById('modelZoomStage');
+  const zoomValue = document.getElementById('zoomValue');
+  const baseWidth = 1200;
+  const baseHeight = 1130;
   const layerHeight = 188;
 
   layers.forEach((name,i) => {
@@ -146,7 +151,39 @@
     svg.querySelectorAll('.relation-path,.relation-label').forEach(el=>{const type=el.dataset.type || relations.find(r=>r.id===el.dataset.relationId)?.type;el.classList.toggle('hidden-relation',filter!=='all'&&type!==filter);});
     document.querySelectorAll('.model-node').forEach(el=>el.classList.remove('dimmed'));
   }
+
+  let zoom = 1;
+  function setZoom(nextZoom, resetPosition=false) {
+    const next=Math.min(1.6,Math.max(.35,Math.round(nextZoom*100)/100));
+    const oldWidth=baseWidth*zoom, oldHeight=baseHeight*zoom;
+    const centerX=(viewport.scrollLeft+viewport.clientWidth/2)/oldWidth;
+    const centerY=(viewport.scrollTop+viewport.clientHeight/2)/oldHeight;
+    zoom=next;
+    zoomStage.style.width=`${baseWidth*zoom}px`;
+    zoomStage.style.height=`${baseHeight*zoom}px`;
+    canvas.style.transform=`scale(${zoom})`;
+    zoomValue.value=`${Math.round(zoom*100)}%`;
+    document.getElementById('zoomOut').disabled=zoom<=.35;
+    document.getElementById('zoomIn').disabled=zoom>=1.6;
+    requestAnimationFrame(()=>{
+      if (resetPosition) {
+        viewport.scrollTo({left:0,top:0,behavior:'smooth'});
+      } else {
+        viewport.scrollLeft=Math.max(0,centerX*baseWidth*zoom-viewport.clientWidth/2);
+        viewport.scrollTop=Math.max(0,centerY*baseHeight*zoom-viewport.clientHeight/2);
+      }
+    });
+  }
+  function fitDiagram() {
+    const horizontal=(viewport.clientWidth-12)/baseWidth;
+    const vertical=(viewport.clientHeight-12)/baseHeight;
+    setZoom(Math.min(1,horizontal,vertical),true);
+  }
+  document.getElementById('zoomOut').addEventListener('click',()=>setZoom(zoom-.1));
+  document.getElementById('zoomIn').addEventListener('click',()=>setZoom(zoom+.1));
+  document.getElementById('zoomFit').addEventListener('click',fitDiagram);
   document.querySelectorAll('[data-relation-filter]').forEach(b=>b.addEventListener('click',()=>applyFilter(b.dataset.relationFilter)));
+  setZoom(1);
   drawRelations();
   selectNode('total_revenue');
   window.addEventListener('resize',()=>requestAnimationFrame(drawRelations));

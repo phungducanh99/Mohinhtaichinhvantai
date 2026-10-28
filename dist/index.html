@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261023" />
+  <link rel="stylesheet" href="styles.css?v=20261028b" />
 </head>
 <body>
   <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
@@ -71,17 +71,27 @@
         <p class="heading-note">Nhấn vào một chỉ số để xem công thức, quan hệ tác động và câu hỏi quản trị.</p>
       </div>
       <div class="relation-toolbar" aria-label="Lọc loại đường liên kết">
-        <button class="active" type="button" data-relation-filter="all">Tất cả</button>
-        <button type="button" data-relation-filter="formula"><i class="legend-line formula-line"></i>Công thức</button>
-        <button type="button" data-relation-filter="positive"><i class="legend-line positive-line"></i>Tác động thuận</button>
-        <button type="button" data-relation-filter="negative"><i class="legend-line negative-line"></i>Tác động nghịch</button>
+        <div class="relation-filters">
+          <button class="active" type="button" data-relation-filter="all">Tất cả</button>
+          <button type="button" data-relation-filter="formula"><i class="legend-line formula-line"></i>Công thức</button>
+          <button type="button" data-relation-filter="positive"><i class="legend-line positive-line"></i>Tác động thuận</button>
+          <button type="button" data-relation-filter="negative"><i class="legend-line negative-line"></i>Tác động nghịch</button>
+        </div>
+        <div class="zoom-controls" role="group" aria-label="Điều khiển kích thước sơ đồ">
+          <button class="zoom-icon" id="zoomOut" type="button" aria-label="Thu nhỏ sơ đồ" title="Thu nhỏ">−</button>
+          <output id="zoomValue" aria-live="polite">100%</output>
+          <button class="zoom-icon" id="zoomIn" type="button" aria-label="Phóng to sơ đồ" title="Phóng to">+</button>
+          <button id="zoomFit" type="button" aria-label="Đưa toàn bộ sơ đồ vừa khung">Vừa khung</button>
+        </div>
       </div>
       <div class="index-model-shell">
         <div class="index-model-viewport" aria-label="Sơ đồ chỉ số kinh doanh HVXT có thể cuộn ngang">
-          <div class="index-model-canvas" id="indexModelCanvas">
-            <svg class="relation-svg" id="relationSvg" aria-hidden="true"></svg>
-            <div class="model-layers" id="modelLayers"></div>
-            <div class="model-nodes" id="modelNodes"></div>
+          <div class="model-zoom-stage" id="modelZoomStage">
+            <div class="index-model-canvas" id="indexModelCanvas">
+              <svg class="relation-svg" id="relationSvg" aria-hidden="true"></svg>
+              <div class="model-layers" id="modelLayers"></div>
+              <div class="model-nodes" id="modelNodes"></div>
+            </div>
           </div>
         </div>
         <aside class="node-side-panel" id="nodeSidePanel" aria-live="polite">
@@ -210,6 +220,6 @@
 
   <footer><span>Bản đồ học HVXT 7P+F</span><span>Phiên bản 28/10/2026 · Trang học nội bộ</span></footer>
   <script src="app.js?v=20261028"></script>
-  <script src="model.js?v=20261028"></script>
+  <script src="model.js?v=20261028b"></script>
 </body>
 </html>
