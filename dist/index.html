@@ -18,7 +18,7 @@
       <span><strong>HVXT 7P+F</strong><small>Bản đồ học mô hình kinh doanh</small></span>
     </a>
     <nav aria-label="Điều hướng chính">
-      <a href="#map">Mô hình</a><a href="#numbers">Số liệu</a><a href="#learn">Học</a><a href="#sources">Nguồn</a>
+      <a href="#map">Mô hình</a><a href="#index-model">Sơ đồ chỉ số</a><a href="#numbers">Số liệu</a><a href="#learn">Học</a><a href="#sources">Nguồn</a>
     </nav>
     <button class="mode-toggle" id="modeToggle" type="button" aria-label="Đổi giao diện sáng tối">◐</button>
   </header>
@@ -65,9 +65,37 @@
       <article class="pillar-detail" id="pillarDetail" aria-live="polite"></article>
     </section>
 
+    <section class="section index-model-section" id="index-model">
+      <div class="section-heading index-heading">
+        <div><p class="eyebrow">02 · SƠ ĐỒ CHỈ SỐ</p><h2>Từ thị trường đến lợi nhuận và vốn</h2></div>
+        <p class="heading-note">Nhấn vào một chỉ số để xem công thức, quan hệ tác động và câu hỏi quản trị.</p>
+      </div>
+      <div class="relation-toolbar" aria-label="Lọc loại đường liên kết">
+        <button class="active" type="button" data-relation-filter="all">Tất cả</button>
+        <button type="button" data-relation-filter="formula"><i class="legend-line formula-line"></i>Công thức</button>
+        <button type="button" data-relation-filter="positive"><i class="legend-line positive-line"></i>Tác động thuận</button>
+        <button type="button" data-relation-filter="negative"><i class="legend-line negative-line"></i>Tác động nghịch</button>
+      </div>
+      <div class="index-model-shell">
+        <div class="index-model-viewport" aria-label="Sơ đồ chỉ số kinh doanh HVXT có thể cuộn ngang">
+          <div class="index-model-canvas" id="indexModelCanvas">
+            <svg class="relation-svg" id="relationSvg" aria-hidden="true"></svg>
+            <div class="model-layers" id="modelLayers"></div>
+            <div class="model-nodes" id="modelNodes"></div>
+          </div>
+        </div>
+        <aside class="node-side-panel" id="nodeSidePanel" aria-live="polite">
+          <div class="panel-placeholder"><span>CHỌN MỘT CHỈ SỐ</span><h3>Chi tiết sẽ hiển thị tại đây</h3><p>Bắt đầu từ “Tổng doanh thu” hoặc “LNST/xe/tháng” để lần ngược các biến số.</p></div>
+        </aside>
+      </div>
+      <div class="model-reading-note">
+        <b>Cách đọc:</b> nét liền là cấu phần trực tiếp trong công thức. Nét đứt màu xanh là giả thuyết tác động thuận; nét đứt màu đỏ là giả thuyết tác động nghịch. Dấu “+ / −” chỉ chiều tác động khi các yếu tố khác không đổi, không phải bằng chứng quan hệ nhân quả.
+      </div>
+    </section>
+
     <section class="section numbers" id="numbers">
       <div class="section-heading">
-        <div><p class="eyebrow">02 · DỮ LIỆU TỆP KHKD</p><h2>Hiệu quả kinh tế đang nói gì?</h2></div>
+        <div><p class="eyebrow">03 · DỮ LIỆU TỆP KHKD</p><h2>Hiệu quả kinh tế đang nói gì?</h2></div>
         <div class="segmented" role="group" aria-label="Chọn lớp thông tin">
           <button class="active" data-layer="all">Tất cả</button><button data-layer="source">Dữ liệu</button><button data-layer="interpretation">Diễn giải</button>
         </div>
@@ -110,7 +138,7 @@
 
     <section class="section lab" id="scenario">
       <div class="section-heading">
-        <div><p class="eyebrow">03 · PHÒNG THÍ NGHIỆM</p><h2>Nếu thay đổi biến số thì sao?</h2></div>
+        <div><p class="eyebrow">04 · PHÒNG THÍ NGHIỆM</p><h2>Nếu thay đổi biến số thì sao?</h2></div>
         <p class="heading-note">Mô phỏng chỉ số hóa (mức cơ sở = 100), không phải dự báo tài chính.</p>
       </div>
       <div class="lab-grid">
@@ -131,7 +159,7 @@
     </section>
 
     <section class="section learn" id="learn">
-      <div class="section-heading"><div><p class="eyebrow">04 · HỌC CHỦ ĐỘNG</p><h2>Nhớ bằng quyết định, không bằng định nghĩa</h2></div></div>
+      <div class="section-heading"><div><p class="eyebrow">05 · HỌC CHỦ ĐỘNG</p><h2>Nhớ bằng quyết định, không bằng định nghĩa</h2></div></div>
       <div class="learn-tabs" role="tablist">
         <button class="active" data-tab="flashcards" role="tab">Thẻ ghi nhớ</button><button data-tab="quiz" role="tab">Kiểm tra 5 câu</button><button data-tab="case" role="tab">Tình huống quản trị</button>
       </div>
@@ -155,7 +183,7 @@
     </section>
 
     <section class="section playbook">
-      <div class="section-heading"><div><p class="eyebrow">05 · CẨM NANG HÀNH ĐỘNG</p><h2>Từ tín hiệu đến hành động</h2></div></div>
+      <div class="section-heading"><div><p class="eyebrow">06 · CẨM NANG HÀNH ĐỘNG</p><h2>Từ tín hiệu đến hành động</h2></div></div>
       <div class="loop" aria-label="Chu trình điều chỉnh"><span>Tín hiệu</span><i>→</i><span>Chẩn đoán</span><i>→</i><span>Giả thuyết</span><i>→</i><span>Thử nghiệm</span><i>→</i><span>Đo lường</span><i>→</i><span>Nhân rộng / Dừng</span></div>
       <div class="playbook-grid">
         <article><b>Hệ số lấp đầy thấp</b><p>Tách theo chuyến/khung giờ → gom lịch → thử dịch chuyển nhu cầu → đo lãi góp/chuyến.</p></article>
@@ -168,7 +196,7 @@
     </section>
 
     <section class="section sources" id="sources">
-      <div class="section-heading"><div><p class="eyebrow">06 · BẰNG CHỨNG</p><h2>Nguồn nào nói điều gì?</h2></div></div>
+      <div class="section-heading"><div><p class="eyebrow">07 · BẰNG CHỨNG</p><h2>Nguồn nào nói điều gì?</h2></div></div>
       <div class="source-grid">
         <article class="source-primary"><span>NỘI BỘ · ĐỊNH NGHĨA</span><h3>Chiến thuật 7P+F</h3><p>Xác nhận cấu trúc 7P và cột Tài chính xuyên suốt. Cập nhật 04/09/2026. Chưa thấy thông tin thuộc tính về quyết định phê duyệt hoặc phiên bản ban hành.</p><a href="https://docs.google.com/spreadsheets/d/1Ca9oT0dYKkh90S0l7ppms37PF_onxF_Ss2A8dMw7Ihw/edit" target="_blank" rel="noreferrer">Mở nguồn ↗</a></article>
         <article><span>NỘI BỘ · DỮ LIỆU</span><h3>Tệp KHKD 2026 HVXT</h3><p>Nguồn các số liệu báo cáo lãi lỗ và sản phẩm trong bài học trước. Có lỗi #REF!, mô hình nhu cầu chưa nối kín và chênh lệch đối soát; cần kiểm soát trước khi ra quyết định đầu tư.</p><a href="chatgpt-conversation://6ad9e3fe-e3e0-83ec-9c05-1993c62efdf0">Mở hội thoại phân tích ↗</a></article>
@@ -180,7 +208,8 @@
     </section>
   </main>
 
-  <footer><span>Bản đồ học HVXT 7P+F</span><span>Phiên bản 23/10/2026 · Trang học nội bộ</span></footer>
-  <script src="app.js?v=20261023"></script>
+  <footer><span>Bản đồ học HVXT 7P+F</span><span>Phiên bản 28/10/2026 · Trang học nội bộ</span></footer>
+  <script src="app.js?v=20261028"></script>
+  <script src="model.js?v=20261028"></script>
 </body>
 </html>
